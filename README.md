@@ -27,10 +27,9 @@ Return the minimum number of minutes that must elapse until no cell has a fresh 
 
 ## Examples
 
-![Screenshot](https://assets.leetcode.com/uploads/2019/02/16/oranges.png)
-
 *Example 1*
-> **Input**: grid = [[2,1,1],[1,1,0],[0,1,1]]
+> ![Screenshot](https://assets.leetcode.com/uploads/2019/02/16/oranges.png)
+> </br> **Input**: grid = [[2,1,1],[1,1,0],[0,1,1]]
 > </br> **Output**: 4
 
 *Example 2*
