@@ -1,21 +1,19 @@
 package org.tfoc;
 
-import java.util.ArrayDeque;
+import java.util.LinkedList;
 import java.util.Queue;
 
 public class Solution {
 
     private static final int FRESH_ORANGE = 1;
-    private static final int ROTTEN_ORANGE= 2;
+    private static final int ROTTEN_ORANGE = 2;
     private static final int[][] DIRECTIONS = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
     public int rotting(int[][] grid) {
-
-
         int rows = grid.length;
         int cols = grid[0].length;
 
-        Queue<int[]> queue = new ArrayDeque<>();
+        Queue<int[]> queue = new LinkedList<>();
 
         int freshOranges = 0;
 
@@ -49,7 +47,7 @@ public class Solution {
                         if (Boolean.TRUE.equals(checkDirection(x, y, rows, cols, grid))) {
 
                             //Pudro la naranja
-                            grid[x][y] = 2;
+                            grid[x][y] = ROTTEN_ORANGE;
 
                             //Añado la nueva naranja podrida a la cola
                             queue.offer(new int[]{x, y});
@@ -78,8 +76,7 @@ public class Solution {
      * Compruebo si la direccion es posible y si tiene naranja fresca
      *
      */
-    private Boolean checkDirection(int x, int y, int rows, int cols, int[][] grid){
-
+    private Boolean checkDirection(int x, int y, int rows, int cols, int[][] grid) {
         return x >= 0 && x < rows && y >= 0 && y < cols && grid[x][y] == FRESH_ORANGE;
     }
 }
